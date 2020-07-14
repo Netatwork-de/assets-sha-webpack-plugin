@@ -1,0 +1,48 @@
+{
+  "name": "@netatwork/assets-sha-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Emits the SHA-X hashes for the configured assets",
+  "repository": "github:Netatwork-de/assets-sha-webpack-plugin",
+  "author": "Net at Work GmbH",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "scripts": {
+    "lint": "eslint . --ext .ts --cache",
+    "//": "& npm run lint -- --quiet",
+    "//prebuild": "rimraf dist",
+    "build": "tsc",
+    "dev": "tsc -w --preserveWatchOutput",
+    "test": "TODO"
+  },
+  "dependencies": {
+    "micromatch": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "@types/micromatch": "^4.0.1",
+    "@types/node": "^14.0.23",
+    "@types/webpack": "^4.41.21",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.4.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsdoc": "^29.2.0",
+    "eslint-plugin-mocha": "^7.0.1",
+    "husky": "^4.2.5",
+    "standard-version": "^8.0.2",
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
